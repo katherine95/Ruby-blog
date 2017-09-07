@@ -295,3 +295,520 @@ Processing by PostsController#new as HTML
 Completed 200 OK in 97ms (Views: 95.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/posts/new" for 127.0.0.1 at 2017-09-07 14:06:44 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (16.1ms)
+  Rendered posts/new.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 787ms (Views: 772.2ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateAdmins (20170907125040)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "admins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_email" ON "admins" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170907125040"]]
+  [1m[35m (166.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ckeditor_assets_on_type' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ckeditor_assets_on_type' AND type='index'
+[0m
+Started GET "/admins" for 127.0.0.1 at 2017-09-07 14:41:44 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/admins"):
+  
+actionpack (5.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.5) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered collection of /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [25 times] (40.7ms)
+  Rendered collection of /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [6 times] (2.0ms)
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (15.7ms)
+  Rendering /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (15.3ms)
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (149.9ms)
+Started GET "/Admins" for 127.0.0.1 at 2017-09-07 14:41:54 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/Admins"):
+  
+actionpack (5.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.5) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered collection of /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [25 times] (10.3ms)
+  Rendered collection of /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [6 times] (3.0ms)
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendering /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (53.4ms)
+Started GET "/admins/sign_in" for 127.0.0.1 at 2017-09-07 14:42:14 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.4ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (44.2ms)
+Completed 200 OK in 834ms (Views: 811.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2017-09-07 14:45:37 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (3.0ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (10.8ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+Completed 200 OK in 123ms (Views: 121.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2017-09-07 14:45:43 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.0ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+Completed 200 OK in 79ms (Views: 78.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 14:45:46 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+Completed 200 OK in 98ms (Views: 91.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2017-09-07 14:45:48 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.8ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+Completed 200 OK in 90ms (Views: 87.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2017-09-07 14:46:43 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (2.0ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+Completed 200 OK in 105ms (Views: 103.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 14:46:46 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+Completed 200 OK in 72ms (Views: 70.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2017-09-07 14:46:47 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.9ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+Completed 200 OK in 94ms (Views: 92.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 14:46:59 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+Completed 200 OK in 76ms (Views: 74.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2017-09-07 14:47:02 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.8ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+Completed 200 OK in 108ms (Views: 105.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-09-07 14:51:18 +0300
+  
+ActionController::RoutingError (undefined method `before_action' for main:Object):
+  
+app/controllers/posts_controller.rb:1:in `<top (required)>'
+  Rendering /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered collection of /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [25 times] (7.6ms)
+  Rendered collection of /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [6 times] (2.2ms)
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendering /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (41.1ms)
+Started GET "/posts" for 127.0.0.1 at 2017-09-07 14:51:59 +0300
+  
+ActionController::RoutingError (undefined method `before_action' for main:Object):
+  
+app/controllers/posts_controller.rb:1:in `<top (required)>'
+  Rendering /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered collection of /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [25 times] (5.7ms)
+  Rendered collection of /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [6 times] (2.7ms)
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (36.6ms)
+Started GET "/posts" for 127.0.0.1 at 2017-09-07 14:52:52 +0300
+  
+ActionController::RoutingError (undefined method `before_action' for main:Object):
+  
+app/controllers/posts_controller.rb:65:in `<top (required)>'
+  Rendering /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered collection of /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [25 times] (10.8ms)
+  Rendered collection of /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [6 times] (2.4ms)
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendering /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (45.9ms)
+Started GET "/posts" for 127.0.0.1 at 2017-09-07 14:52:54 +0300
+  
+ActionController::RoutingError (undefined method `before_action' for main:Object):
+  
+app/controllers/posts_controller.rb:65:in `<top (required)>'
+  Rendering /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered collection of /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [25 times] (7.6ms)
+  Rendered collection of /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [6 times] (1.8ms)
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendering /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (43.7ms)
+Started GET "/posts" for 127.0.0.1 at 2017-09-07 14:55:12 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+Completed 200 OK in 100ms (Views: 93.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 14:55:16 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+Completed 200 OK in 75ms (Views: 72.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2017-09-07 14:55:18 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (2.1ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+Completed 200 OK in 140ms (Views: 114.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admins/sign_up" for 127.0.0.1 at 2017-09-07 14:55:21 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering admins/registrations/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.2ms)
+  Rendered admins/registrations/new.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+Completed 200 OK in 80ms (Views: 78.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins" for 127.0.0.1 at 2017-09-07 14:55:43 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HMw3i2OOQAnF9jjNN2ww6XkuiFQe3vx+wuwc/iRZXTH2z1PfJbImCNvSToW3K7WPHmRMiY5C7LUPbQFgLRDYRA==", "admin"=>{"email"=>"kate@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "kate@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "kate@gmail.com"], ["encrypted_password", "$2a$11$3mNN4C6eZ5Ji7oZzDdesf.Akcr2gTOb15ddzM.5o/H1Ucf0.vdKka"], ["created_at", "2017-09-07 11:55:43.448156"], ["updated_at", "2017-09-07 11:55:43.448156"]]
+  [1m[35m (84.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "admins" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "admins"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2017-09-07 11:55:43.536612"], ["last_sign_in_at", "2017-09-07 11:55:43.536612"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2017-09-07 11:55:43.537799"], ["id", 1]]
+  [1m[35m (77.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 515ms (ActiveRecord: 163.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 14:55:43 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.2ms)
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (2.2ms)
+Completed 200 OK in 85ms (Views: 83.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-09-07 14:55:48 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.1ms)
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (2.6ms)
+Completed 200 OK in 105ms (Views: 99.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admins/edit" for 127.0.0.1 at 2017-09-07 14:55:50 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/registrations/edit.html.erb within layouts/application
+  Rendered admins/registrations/edit.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+Completed 200 OK in 108ms (Views: 103.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-09-07 14:55:58 +0300
+Processing by PostsController#new as HTML
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (10.6ms)
+  Rendered posts/new.html.erb within layouts/application (12.3ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+Completed 200 OK in 99ms (Views: 95.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-07 14:56:16 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UamEu9keJKdzeH8Aym58/mYzmYqqLEbZiIcQEGbULXje2FFMtLXwZ0vz0nBnKsPxhjBBx1KOxd0li70C8Hga2Q==", "post"=>{"title"=>"My day", "body"=>"<p>ncmsclsanvsvczscopvisofdvfvnfv</p>\r\n"}, "commit"=>"Create Post"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (8.2ms)
+  Rendered posts/new.html.erb within layouts/application (9.7ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+Completed 200 OK in 100ms (Views: 93.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-07 14:56:34 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TIJLQPKDky9mXBq73c3iPRRPE0QSUsq9vqZGNmIntnYBIu2ou4gWxMaGDGqiZI3hoNFocBraz4igB+FI7xj9KQ==", "post"=>{"title"=>"fvfdvggfgffs", "body"=>"<p>ffffffffffdsds</p>\r\n"}, "commit"=>"Create Post"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (5.3ms)
+  Rendered posts/new.html.erb within layouts/application (6.2ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+Completed 200 OK in 63ms (Views: 60.0ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ckeditor_assets_on_type' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ckeditor_assets_on_type' AND type='index'
+[0m
+Started DELETE "/admins/sign_out" for 127.0.0.1 at 2017-09-07 15:01:15 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"luUWSi3mGEMGMX+DKDWN+ZCj0KWBKX78eaB6sFLWR1nbRbCiZO2dqKbraVJXnOIlJD2rkYmhe8lnAd3O3+kMBg=="}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 36ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 15:01:15 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_navigation.html.erb (3.5ms)
+Completed 200 OK in 782ms (Views: 777.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2017-09-07 15:01:19 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.4ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (13.3ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+Completed 200 OK in 91ms (Views: 89.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins/sign_in" for 127.0.0.1 at 2017-09-07 15:01:21 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T42/gZca9ylPNgJpCtjXPj4EckwZljd5GJAizen8fegkiTU7QBdzNf7iFrsXLc/jL09bEfBg6IFCalPDIrVu8A==", "admin"=>{"email"=>"kate@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "kate@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "admins" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "admins"."id" = ?[0m  [["current_sign_in_at", "2017-09-07 12:01:22.122982"], ["sign_in_count", 2], ["updated_at", "2017-09-07 12:01:22.123838"], ["id", 1]]
+  [1m[35m (136.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 289ms (ActiveRecord: 137.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 15:01:22 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.5ms)
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (2.4ms)
+Completed 200 OK in 96ms (Views: 94.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-09-07 15:01:25 +0300
+Processing by PostsController#new as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (8.7ms)
+  Rendered posts/new.html.erb within layouts/application (9.9ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+Completed 200 OK in 82ms (Views: 80.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/ckeditor/pictures?CKEditor=post_body&CKEditorFuncNum=1&langCode=en" for 127.0.0.1 at 2017-09-07 15:01:36 +0300
+Processing by Ckeditor::PicturesController#index as HTML
+  Parameters: {"CKEditor"=>"post_body", "CKEditorFuncNum"=>"1", "langCode"=>"en"}
+  Rendering /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/ckeditor-4.2.4/app/views/ckeditor/pictures/index.html.erb within layouts/ckeditor/application
+  [1m[36mCkeditor::Picture Load (0.3ms)[0m  [1m[34mSELECT  "ckeditor_assets".* FROM "ckeditor_assets" WHERE "ckeditor_assets"."type" IN ('Ckeditor::Picture') ORDER BY id desc LIMIT ? OFFSET ?[0m  [["LIMIT", 24], ["OFFSET", 0]]
+  Rendered collection of /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/ckeditor-4.2.4/app/views/ckeditor/shared/_asset.html.erb [0 times] (0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ckeditor_assets" WHERE "ckeditor_assets"."type" IN ('Ckeditor::Picture')[0m
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/ckeditor-4.2.4/app/views/ckeditor/pictures/index.html.erb within layouts/ckeditor/application (5.8ms)
+  Rendered /home/katherine/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/ckeditor-4.2.4/app/views/ckeditor/shared/_asset_tmpl.html.erb (0.7ms)
+Completed 200 OK in 162ms (Views: 132.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/ckeditor/pictures?qqfile=Screenshot+from+2017-05-27+20-16-24.png" for 127.0.0.1 at 2017-09-07 15:02:04 +0300
+Processing by Ckeditor::PicturesController#create as */*
+  Parameters: {"qqfile"=>"Screenshot from 2017-05-27 20-16-24.png"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ckeditor_assets" ("data_file_name", "data_content_type", "data_file_size", "type", "width", "height", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["data_file_name", "Screenshot_from_2017-05-27_20-16-24.png"], ["data_content_type", "image/png"], ["data_file_size", 1351628], ["type", "Ckeditor::Picture"], ["width", 1319], ["height", 744], ["created_at", "2017-09-07 12:02:06.899850"], ["updated_at", "2017-09-07 12:02:06.899850"]]
+  [1m[35m (127.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 2193ms (Views: 0.2ms | ActiveRecord: 128.3ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-07 15:02:42 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MINMzBIvK/09VrtDnJ/a12pxDXxZzOgw0GZCKSscoirSWtbTT3sOEpJX+1wtFYhz4QsijIur0BwInxAR2ELpdg==", "post"=>{"title"=>"Time to step up", "body"=>"<p><img alt=\"happy coding\" src=\"/uploads/ckeditor/pictures/1/content_Screenshot_from_2017-05-27_20-16-24.png\" style=\"height:451px; width:800px\" /></p>\r\n"}, "commit"=>"Create Post"}
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (6.1ms)
+  Rendered posts/new.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+Completed 200 OK in 80ms (Views: 73.4ms | ActiveRecord: 0.8ms)
+
+
